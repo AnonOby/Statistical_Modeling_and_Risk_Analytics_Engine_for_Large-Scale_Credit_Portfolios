@@ -205,3 +205,35 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# -------------------------------------------------
+# PyCharm IDE Configuration
+# -------------------------------------------------
+.idea/
+
+# -------------------------------------------------
+# Project Data
+# -------------------------------------------------
+data/
+*.csv
+*.zip
+*.json
+
+# -------------------------------------------------
+# Operating System Files
+# -------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# -------------------------------------------------
+# Jupyter Notebook
+# -------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb
