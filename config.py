@@ -36,3 +36,20 @@ PROCESSED_LOAN_DATA_FILE = PROCESSED_DATA_DIR / "loans_cleaned.parquet"
 # Database Export File (Optional backup)
 DB_EXPORT_FILE = PROCESSED_DATA_DIR / "database_export.csv"
 
+# --------------------------------------------------
+# 3. Database Configuration (PostgreSQL)
+# --------------------------------------------------
+# Please match these settings to your local PostgreSQL instance
+DB_CONFIG = {
+    "user" : os.getenv("DB_USER", "postgres"),
+    "password" : os.getenv("DB_PASSWORD", "your_password_here"),
+    "host" : os.getenv("DB_HOST", "localhost"),
+    "port" : os.getenv("DB_PORT", "5432"),
+    "database" : os.getenv("DB_NAME", "credit_risk_db")
+}
+
+# Construct the SQLAlchemy Database URL
+DB_URL = (
+    f"postgresql+psycopg2://{DB_CONFIG["user"]}:{DB_CONFIG["password"]}"
+    f"@{DB_CONFIG["host"]}:{DB_CONFIG["port"]}/{DB_CONFIG["database"]}"
+)
