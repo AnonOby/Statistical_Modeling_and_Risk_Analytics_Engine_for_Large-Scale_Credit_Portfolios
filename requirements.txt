@@ -1,0 +1,17 @@
+# Data Processing Core
+pandas>=2.2.2
+numpy>=2.0.0
+
+# Database Connection
+sqlalchemy>=2.0.31
+psycopg2-binary>=2.9.9  # PostgreSQL driver
+
+# Visualization
+matplotlib>=3.9.1
+seaborn>=0.13.2
+
+# Statistics & Tools
+scipy>=1.14.1
+python-dotenv>=1.0.1    # For managing environment variables (e.g., passwords)
+tqdm>=4.66.5            # Progress bar utility
+openpyxl>=3.1.5         # Backup for Excel read/write
