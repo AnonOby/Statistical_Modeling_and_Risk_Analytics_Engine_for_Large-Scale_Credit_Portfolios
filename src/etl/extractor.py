@@ -32,5 +32,14 @@ class DataExtractor:
         """
         Generator that yields pandas DataFrames in chunks.
 
+        Args:
+            chunksize (int): Number of rows per chunk. 50,000 is a good balance for 1GB files.
 
+        Yields:
+            pd.DataFrame: A chunk of the data.
         """
+        self.validate_file()
+
+        print(f"Starting data extraction (Chunk size: {chunksize} rows...)")
+        print(f"This may take a moment depending on your disk speed...")
+
