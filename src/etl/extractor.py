@@ -71,3 +71,12 @@ class DataExtractor:
         without loading the whole file.
         """
         self.validate_file()
+        # Read only the first row (header)
+        df_sample = pd.read_csv(self.file_path, nrows=1)
+        return df_sample.columns.tolist()
+
+# --- Test Block ---
+if __name__ == "__main__":
+    # This block runs only when you run this file directly (for testing)
+    print("--- Testing DataExtractor ---")
+
