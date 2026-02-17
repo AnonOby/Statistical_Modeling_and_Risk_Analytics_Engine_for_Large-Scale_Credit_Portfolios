@@ -13,3 +13,11 @@ class DataExtractor:
     Implements a Generator to yield pieces of data on demand.
     """
 
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def validate_file(self):
+        """
+        Check if the raw data file exists in the designated directory.
+        """
+        if not self.file_path.exists():
