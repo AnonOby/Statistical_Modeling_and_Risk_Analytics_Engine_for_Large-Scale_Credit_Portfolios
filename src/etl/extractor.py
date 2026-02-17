@@ -80,3 +80,18 @@ if __name__ == "__main__":
     # This block runs only when you run this file directly (for testing)
     print("--- Testing DataExtractor ---")
 
+    try:
+        extractor = DataExtractor(config.RAW_LOAN_DATA_FILE)
+
+        # Test 1: Check if file exists (will fail if you haven't download data yet)
+        extractor.validate_file()
+
+        # Test 2: Try to read the first chunk (will fail if file is missing)
+        for i, chunk in enumerate(extractor.get_chunks()):
+            print(f"Received chunk {i}: Shape {chunk.shape}")
+            print(f"Columns: {list(chunk.columns)[:5]}...") # Print just the first 5 columns
+            if i == 0: # Test only the first chunk to save time
+                break
+
+    except Exception as e:
+        print(e)
