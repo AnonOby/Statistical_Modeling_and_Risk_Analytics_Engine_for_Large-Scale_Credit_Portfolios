@@ -70,3 +70,4 @@ class DataExtractor:
         Utility method to quickly read just the header to get column names
         without loading the whole file.
         """
+        self.validate_file()
