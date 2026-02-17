@@ -64,3 +64,9 @@ class DataExtractor:
         except Exception as e:
             print(f"Error loading file: {e}")
             raise
+
+    def get_columns(self):
+        """
+        Utility method to quickly read just the header to get column names
+        without loading the whole file.
+        """
