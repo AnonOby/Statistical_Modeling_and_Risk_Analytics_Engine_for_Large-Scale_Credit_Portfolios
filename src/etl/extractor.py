@@ -60,3 +60,7 @@ class DataExtractor:
                 for chunk in chunk_iterator:
                     yield chunk
                     pbar.update(1)
+
+        except Exception as e:
+            print(f"Error loading file: {e}")
+            raise
