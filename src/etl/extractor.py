@@ -43,3 +43,20 @@ class DataExtractor:
         print(f"Starting data extraction (Chunk size: {chunksize} rows...)")
         print(f"This may take a moment depending on your disk speed...")
 
+        # Initialize tqdm progress bar (estimating total rows for visualization)
+        # We pass a rough estimate or let tqdm just count iterations
+        try:
+            with tqdm(total = None, desc = "Reading Chunks", unit = "chunk") as pbar:
+
+                # Create the chunk iterator
+                chunk_iterator = pd.read_csv(
+                    self.file_path,
+                    chunksize=chunksize,
+                    low_memory=False, # Disable low_memory to handle mixed types better initially
+                    encoding="utf-8",
+                    on_bad_lines="warn"
+                )
+
+                for chunk in chunk_iterator:
+                    yield chunk
+                    pbar.update(1)
