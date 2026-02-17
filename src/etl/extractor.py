@@ -7,3 +7,9 @@ from tqdm import tqdm
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 import config
 
+class DataExtractor:
+    """
+    Handles extractions of large datasets using chunking to optimize memory usage.
+    Implements a Generator to yield pieces of data on demand.
+    """
+
