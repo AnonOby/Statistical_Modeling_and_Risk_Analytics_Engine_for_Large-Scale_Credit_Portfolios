@@ -2,8 +2,6 @@ import pandas as pd
 import sys
 import os
 
-from fontTools.merge.util import first
-
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 
@@ -27,3 +25,17 @@ def main():
 
         print(f"Successfully loaded {first_chunk.shape[0]} rows.")
         print(f"Total Columns in Dataset: {first_chunk.shape[1]}")
+
+    # 3. Inspect the "emp_title" column specifically
+    if "emp_title" in first_chunk.columns:
+        print("\n" + "="*50)
+        print("TOP 20 MOST COMMON JOB TITLES (Raw Data):")
+        print("="*50)
+
+        # Count frequency and show top 20
+        job_counts = first_chunk["emp_title"].value_counts().head(20)
+
+        for title, count in job_counts.items():
+            bar = "🧊" * int(count / 20) # Simple visual bar
+            print(f"{title:<25} | {count:<5} {bar}")
+
