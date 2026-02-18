@@ -39,3 +39,11 @@ def main():
             bar = "🧊" * int(count / 20) # Simple visual bar
             print(f"{title:<25} | {count:<5} {bar}")
 
+        print("\n Observation:")
+        print("There are likely thousands of unique variations (e.g., 'Senior Manager' vs 'Manager').")
+        print("This justifies why we need the keyword mapping in cleaner.py. \n")
+
+    else:
+        print("Column 'emp_title' not found in this chunk. Checking available columns...")
+        print(list(first_chunk.columns))
+
