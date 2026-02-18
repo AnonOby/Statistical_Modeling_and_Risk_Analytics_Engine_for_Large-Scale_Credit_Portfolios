@@ -9,3 +9,10 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 from src.etl.extractor import DataExtractor
 import config
 
+def main():
+    print("Initializing Data Exploration...")
+    print("-" * 50)
+
+    # Initialize Extractor
+    extractor = DataExtractor(config.RAW_LOAN_DATA_FILE)
+

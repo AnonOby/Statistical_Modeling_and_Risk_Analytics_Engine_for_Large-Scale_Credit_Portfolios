@@ -89,7 +89,7 @@ if __name__ == "__main__":
         # Test 2: Try to read the first chunk (will fail if file is missing)
         for i, chunk in enumerate(extractor.get_chunks()):
             print(f"Received chunk {i}: Shape {chunk.shape}")
-            print(f"Columns: {list(chunk.columns)[:10]}...") # Print just the first 5 columns
+            print(f"Columns: {list(chunk.columns)[:5]}...") # Print just the first 5 columns
             if i == 0: # Test only the first chunk to save time
                 break
 
